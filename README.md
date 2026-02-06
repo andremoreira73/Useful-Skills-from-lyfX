@@ -40,6 +40,19 @@ Corporate design guidelines for lyfX.ai -- shared here as an example of how to e
 
 **What you get:** Consistent brand application across all visual material Claude creates -- documents, websites, presentations, UI designs.
 
+### `/ai-dev-workflow`
+
+Disciplined AI-assisted development workflow. Makes Claude act as a structured pair programmer that enforces middle-out design and maintains living design context files. Claude drives the process but stops at critical gates requiring human input.
+
+We'd been working this way for a while, but a [tweet from ERM](https://x.com/esrtweet/status/2019391670609940746) articulated the pattern so well that it inspired us to formalize our workflow into a reusable skill.
+
+**Includes:**
+- SKILL.md -- middle-out design workflow with 6 steps and 3 human gates
+- `assets/design_notes_template.md` -- template for the living design brief
+- `references/plan_mode.md` -- integration guide for Claude Code plan mode
+
+**What you get:** Structured development sessions where Claude drafts specs, proposes decompositions, and implements one component at a time — but always stops to validate intent, domain knowledge, and trade-offs with you before proceeding.
+
 ## Installation
 
 ### Option 1: Copy individual skills
@@ -70,6 +83,7 @@ These skills are meant to be adapted to your workflow:
 - **market-research**: Edit `references/methodology.md` to match your deliverable format and source preferences. Customize `assets/brief_template.md` for your research scope.
 - **linkedin-posts**: Update the style guidelines in SKILL.md to match your voice and tone.
 - **lyfx-corporate-design**: Replace the entire skill with your own brand's colors, fonts, and assets.
+- **ai-dev-workflow**: Adjust the human gates, component spec format, or project file conventions in SKILL.md to match your team's development rhythm.
 
 ## About lyfX.ai
 
