@@ -144,7 +144,7 @@ These skills and agents are meant to be adapted to your workflow:
 
 ## About lyfX.ai
 
-[lyfX.ai](https://lyfx.ai) is a data and AI experts. We built these skills to streamline our own business workflows with Claude Code, and we're sharing them in the hope that others find them useful.
+[lyfX.ai](https://lyfx.ai) is a data and AI company with deep expertise in these areas, particularly for applications in manufacturing. We built these skills to streamline our own business workflows with Claude Code, and we're sharing them in the hope that others find them useful.
 
 ## License
 
