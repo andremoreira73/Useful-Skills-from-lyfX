@@ -8,11 +8,11 @@ Skills are `SKILL.md` files that give Claude Code domain expertise. Drop one int
 
 Learn more: [Claude Code Skills documentation](https://code.claude.com/docs/en/skills)
 
-## What are agents?
+## What are sub-agents?
 
 Agents are markdown files that define specialized sub-agents Claude can launch for focused tasks. Drop one into `.claude/agents/` and Claude can spawn it as a parallel worker with its own context window, tools, and skills. Agents are ideal for tasks like code review, where you want a dedicated reviewer that doesn't pollute your main conversation context.
 
-Learn more: [Claude Code Agents documentation](https://code.claude.com/docs/en/agents)
+Learn more: [Claude Code Sub-Agents documentation](https://code.claude.com/docs/en/sub-agents#use-the-agents-command)
 
 ## Available Agents
 
@@ -21,15 +21,16 @@ Learn more: [Claude Code Agents documentation](https://code.claude.com/docs/en/a
 Structured code review agent that checks for quality, security, design health, and convention compliance. Understands core design principles (Single Responsibility, DRY, Law of Demeter, Open-Closed, etc.) and produces categorized findings (Critical / Warning / Passed) with line numbers and fix suggestions.
 
 **Features:**
+
 - General quality checks (naming, duplication, error handling, secrets)
 - Python-specific checks (type hints, docstrings, context managers)
-- Design principle violations from *Software Design* by Ronald Mak
+- Design principle violations from _Software Design_ by Ronald Mak
 - Large codebase strategy using the `/rlm` skill for parallel scanning
 - CLI command review (when paired with the `reviewing-cli-command` skill)
 
 **Used by:** The `/ai-dev-workflow` skill launches this agent in Step 7 (Code Review & Hardening).
 
-> **Attribution:** Based on the code-reviewer agent from the [Agent Skills with Anthropic](https://www.deeplearning.ai/) course by DeepLearning.AI ([source](https://github.com/https-deeplearning-ai/sc-agent-skills-files/blob/main/L6/.claude/agents/code-reviewer.md)), modified with design health checks, large codebase strategy, and RLM integration. The original repository does not specify a license.
+> **Attribution:** Based on the code-reviewer agent from the [Agent Skills with Anthropic](https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/) course by DeepLearning.AI ([source](https://github.com/https-deeplearning-ai/sc-agent-skills-files/blob/main/L6/.claude/agents/code-reviewer.md)), modified with design health checks, large codebase strategy, and RLM integration. The original repository does not specify a license.
 
 ## Available Skills
 
@@ -38,6 +39,7 @@ Structured code review agent that checks for quality, security, design health, a
 Conduct structured market research with project-based organization. Guides Claude through a four-phase workflow: scope validation, data collection, analysis, and final deliverable.
 
 **Includes:**
+
 - SKILL.md -- workflow and project structure
 - `references/methodology.md` -- deliverable format, source quality hierarchy, citation standards, forecast guidelines
 - `assets/brief_template.md` -- structured template for scoping new research projects
@@ -49,6 +51,7 @@ Conduct structured market research with project-based organization. Guides Claud
 Draft and refine LinkedIn posts while keeping your authentic voice. Manages version history so you can iterate with Claude across sessions.
 
 **Includes:**
+
 - SKILL.md -- style guidelines, versioning convention, workflow
 
 **What you get:** Posts that sound like you, not like AI. Conversational tone, scannable structure, curiosity-driven hooks. Each draft gets versioned (v2, v3...) so you can track iterations.
@@ -58,6 +61,7 @@ Draft and refine LinkedIn posts while keeping your authentic voice. Manages vers
 Corporate design guidelines for lyfX.ai -- shared here as an example of how to encode brand identity into a skill. **Use this as inspiration for creating your own corporate design skill**, not as a template to copy directly.
 
 **Includes:**
+
 - SKILL.md -- color palette, typography, text hierarchy, button styling, CSS variables
 - `assets/` -- logo variants (dark, white, favicon)
 
@@ -67,9 +71,10 @@ Corporate design guidelines for lyfX.ai -- shared here as an example of how to e
 
 Disciplined AI-assisted development workflow with 7 steps and 4 human gates. Makes Claude act as a structured pair programmer that enforces middle-out design, maintains living context files, runs design principle checks during decomposition, and includes a code review hardening step before shipping.
 
-We'd been working this way for a while, but a [tweet from ERM](https://x.com/esrtweet/status/2019391670609940746) articulated the pattern so well that it inspired us to formalize our workflow into a reusable skill.
+We'd been working this way for a while, but a [tweet from Eric Raymond](https://x.com/esrtweet/status/2019391670609940746) articulated the pattern so well that it inspired us to formalize our workflow into a reusable skill.
 
 **Includes:**
+
 - SKILL.md -- middle-out design workflow with 7 steps and 4 human gates
 - `assets/design_notes_template.md` -- template for the living design brief
 - `assets/code-reviewer-agent.md` -- bundled template for the code-reviewer agent (used in Step 7)
@@ -83,6 +88,7 @@ We'd been working this way for a while, but a [tweet from ERM](https://x.com/esr
 Process large codebases (100+ files) using the Recursive Language Model pattern. Instead of reading every file into context (which causes context rot), this skill orchestrates parallel sub-agents that each handle a small slice of the codebase and report back summaries.
 
 **Includes:**
+
 - SKILL.md -- the RLM protocol (Index, Map, Reduce) with Native and Strict modes
 - `scripts/rlm.py` -- helper script for indexing, searching, and chunking files
 
@@ -138,7 +144,7 @@ These skills and agents are meant to be adapted to your workflow:
 
 ## About lyfX.ai
 
-[lyfX.ai](https://lyfx.ai) is a data and AI consultancy. We built these skills to streamline our own business workflows with Claude Code, and we're sharing them in the hope that others find them useful.
+[lyfX.ai](https://lyfx.ai) is a data and AI experts. We built these skills to streamline our own business workflows with Claude Code, and we're sharing them in the hope that others find them useful.
 
 ## License
 
